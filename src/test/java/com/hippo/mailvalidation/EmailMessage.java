@@ -1,4 +1,4 @@
-package com.hippo.steplib;
+package com.hippo.mailvalidation;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

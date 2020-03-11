@@ -9,7 +9,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 features="resources/features",
 glue="com.hippo.stepdef",
 strict=true,
-tags="@Signup")
+tags="@alltest")
 public class Runner1 {
 
 }

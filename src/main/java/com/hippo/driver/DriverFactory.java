@@ -29,7 +29,6 @@ public class DriverFactory implements DriverSource{
 
 	@Override
 	public boolean takesScreenshots() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

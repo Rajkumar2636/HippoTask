@@ -58,6 +58,9 @@ public class HippoPageObject extends PageObject {
 	@FindBy(xpath="//section[@data-name='Create video _+']")
 	public WebElementFacade createVideo;
 	
+	@FindBy(xpath="//div[contains(@class,'webinar-banner-wrap')]//div[contains(@class,'fa-close')]")
+	public WebElementFacade closeWebinarVideo;
+	
 	@FindBy(xpath="//a[contains(@href,'/video/create')]")
 	public WebElementFacade createVideoRecord;
 	
@@ -100,12 +103,6 @@ public class HippoPageObject extends PageObject {
 	@FindBy(xpath="//span[@class='selection']//span[@title='Montserrat']")
 	public WebElementFacade txtFont;
 	
-//	@FindBy(xpath="(//span[contains(@class,'rendered')])[3]")
-//	public WebElementFacade pixel;
-//	
-//	@FindBy(xpath="(//span[contains(@class,'rendered')])[4]")
-//	public WebElementFacade alignment;
-	
 	@FindBy(xpath="//ul[@aria-expanded='true']//li")
 	public List<WebElementFacade> openedDropdownText;
 	
@@ -117,9 +114,6 @@ public class HippoPageObject extends PageObject {
 	
 	@FindBy(xpath="//button[@id='thumbnailEditSaveBtn']")
 	public WebElementFacade editSaveBtn;
-	
-	//input[@placeholder='Email']
-	//input[@placeholder='First Name']
 	
 	@FindBy(xpath="//div[contains(text(),'Send Mail')]")
 	public WebElementFacade sendMail;

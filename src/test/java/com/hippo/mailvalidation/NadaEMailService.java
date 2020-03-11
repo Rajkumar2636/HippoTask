@@ -1,4 +1,4 @@
-package com.hippo.steplib;
+package com.hippo.mailvalidation;
 
 import java.util.List;
 import java.util.Objects;

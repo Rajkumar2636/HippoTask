@@ -9,13 +9,14 @@ import org.openqa.selenium.Keys;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.hippo.mailvalidation.NadaEMailService;
 import com.hippo.page.HippoPageObject;
-import com.hippo.steplib.NadaEMailService;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 
@@ -43,6 +44,7 @@ public class HippoStepDef extends PageObject{
 	public void click_on_Sign_Up_button_and_enter_valid_email_and_password_in_that_field() {
 		String generatedString = RandomStringUtils.randomAlphabetic(10);
 	    System.out.println(generatedString);
+	    hippoPageObject.closeWebinarVideo.click();
 	    hippoPageObject.signUpEmail.sendKeys("hippo" + generatedString + "@gmail.com");
 	    hippoPageObject.signUpPassword.sendKeys("NoPassword@123");
 	    waitABit(2000);
@@ -68,6 +70,7 @@ public class HippoStepDef extends PageObject{
 		hippoPageObject.firstName.sendKeys("Test");
 	    hippoPageObject.companyName.sendKeys("Automation");
 	    hippoPageObject.phoneNumber.sendKeys("91234567896");
+	    
 	    
 	}
 
@@ -101,7 +104,7 @@ public class HippoStepDef extends PageObject{
 		waitABit(5000);
 		hippoPageObject.saveSlideshow.click();
 		hippoPageObject.saveVideoCreation.click();
-		waitABit(20000);
+		waitABit(15000);
 	}
 
 	@Given("^Personalize the video that created$")
@@ -123,7 +126,7 @@ public class HippoStepDef extends PageObject{
 		waitABit(3000);
 		listElementClick(hippoPageObject.openedDropdownText, "Coda");
 		hippoPageObject.editSaveBtn.click();
-		waitABit(20000);
+		waitABit(15000);
 	    
 	}
 
@@ -141,7 +144,8 @@ public class HippoStepDef extends PageObject{
 		hippoPageObject.surveyIcon.click();
 		ScrolltoElementJS(hippoPageObject.sendEmailBtn);
 		hippoPageObject.sendEmailBtn.click();
-		waitABit(50000);
+		waitABit(20000);
+		Serenity.takeScreenshot();
 	    
 	}
 
@@ -149,6 +153,7 @@ public class HippoStepDef extends PageObject{
 	public void verify_the_video_in_mail() throws JsonMappingException, IllegalArgumentException, JSONException, JsonProcessingException, UnirestException {
 		getDriver().get("https://getnada.com/");
 		nada.getEmailId();
+		System.out.println(nada.getEmailId());
 		String msg = nada.getMessageWithSubjectStartsWith("Hippo Video").getText();
 		System.out.println(msg); 
 	}
